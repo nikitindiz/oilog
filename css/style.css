@@ -48,7 +48,7 @@ img {
 
 body {
   margin: 0;
-  padding: 0 0 0 0;
+  padding: 32px 0 0 0;
   font-family: "PT Sans", sans-serif;
   font-size: 16px;
   line-height: 1.5em; }
@@ -310,6 +310,7 @@ ul#top-menu {
     border: 1px solid #ccc;
     background-color: #fafafa;
     position: relative;
+    height: 420px;
     margin-left: -1px; }
     .main-content .post a.learn-more {
       color: #555;
@@ -903,3 +904,37 @@ ul#top-menu {
 
 .hide {
   display: none !important; }
+
+.single-product {
+  padding: 2em 0 0; }
+  .single-product a.add-to-request-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #FF6600;
+    background-color: white;
+    padding: 0.6em 0.8em 0.5em 0.7em;
+    -moz-border-radius: 0.5em;
+    -o-border-radius: 0.5em;
+    -ms-border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    border-radius: 0.5em;
+    font-size: 0.8em;
+    border: 1px solid #FF6600;
+    -moz-transition: color 0.2s, background-color 0.2s;
+    -webkit-transition: color 0.2s, background-color 0.2s;
+    -o-transition: color 0.2s, background-color 0.2s;
+    -ms-transition: color 0.2s, background-color 0.2s;
+    transition: color 0.2s, background-color 0.2s; }
+    .single-product a.add-to-request-btn:hover {
+      background-color: #FF6600;
+      color: white; }
+  .single-product .product-content {
+    margin-left: 320px; }
+    .single-product .product-content h1 {
+      font-size: 1.5em; }
+  .single-product .thumb {
+    display: block;
+    float: left;
+    width: 300px;
+    padding: 1em;
+    border: 1px solid rgba(0, 0, 0, 0.1); }

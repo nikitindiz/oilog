@@ -111,7 +111,7 @@ img
 
 body
   margin: 0
-  padding: 0 0 0 0
+  padding: 32px 0 0 0
   &.admin-bar
     padding: 35px 0 0 0
   font-family: 'PT Sans', sans-serif
@@ -354,7 +354,7 @@ ul#top-menu
     //border-right: 0
     background-color: $color-gray-04
     position: relative
-    //height: 330px
+    height: 420px
     margin-left: -1px
     a.learn-more
       color: $color-gray-03
@@ -880,5 +880,29 @@ ul#top-menu
 .hide
   display: none !important
 
+.single-product
+  padding: 2em 0 0
+  a.add-to-request-btn
+    display: inline-block
+    text-decoration: none
+    color: $color-orange
+    background-color: white
+    padding: 0.6em 0.8em 0.5em 0.7em
+    +border-radius(0.5em)
+    font-size: 0.8em
+    border: 1px solid $color-orange
+    +transition2(color, 0.2s, background-color, 0.2s)
+    &:hover
+      background-color: $color-orange
+      color: white
 
-
+  .product-content
+    margin-left: 320px
+    h1
+      font-size: 1.5em
+  .thumb
+    display: block
+    float: left
+    width: 300px
+    padding: 1em
+    border: 1px solid rgba(0,0,0,0.1)

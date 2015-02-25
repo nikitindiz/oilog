@@ -43,7 +43,8 @@ function content($limit) {
         </div>
       </div>
       <div class="content-wrapper" ng-controller="priceAddController as requestItem">
-           <div class="the-content">
+           <div class="the-content single-product">
+
             <?php if (has_post_thumbnail( $post->ID )) : ?>
             <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' )[0]; ?>
             <div class="thumb">
@@ -51,6 +52,8 @@ function content($limit) {
             </div>
             <?php endif; ?>
 
+            <div class="product-content">
+            <h1><?php echo the_title(); ?></h1>
             <a href="#dummy-link" class="add-to-request-btn"
                                   ng-click="addItemToRequestList(priceReqCtrl,
                                    {id: 123,
@@ -58,10 +61,10 @@ function content($limit) {
                                     description: '<?php echo excerpt(25); ?>',
                                     link: '<?php the_permalink() ?>',
                                     img: '<?php echo $image; ?>'});">
-              <i class="fa fa-plus"></i>
+              <i class="fa fa-plus"></i> Add to request list
             </a>
-
             <?php echo the_content(); ?>
+            </div>
           </div>
       </div>
     </div>
