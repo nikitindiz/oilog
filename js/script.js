@@ -24,7 +24,7 @@ app.controller('priceAddController', ['$scope', '$cookieStore', function($scope,
 
 (function($) {
   $(document).ready(function() {
-    if($('.news-items') !== undefined ) {
+    if($('.news-items').length) {
       setInterval(function() {
         scrollNewsRight();
       }, 5000);
@@ -33,6 +33,12 @@ app.controller('priceAddController', ['$scope', '$cookieStore', function($scope,
         scrollNewsRight();
         return false;
       });
+
+      $(document).on('click','.latest-news a.slide-right', function() {
+        scrollNewsLeft();
+        return false;
+      });
+    }
 
       $(document).on('click','.show-request-list', function() {
         $('.popup-price-window').addClass('visible');
@@ -51,12 +57,6 @@ app.controller('priceAddController', ['$scope', '$cookieStore', function($scope,
         $('.shade-bg').removeClass('visible');
         return false;
       });
-
-      $(document).on('click','.latest-news a.slide-right', function() {
-        scrollNewsLeft();
-        return false;
-      });
-    }
 
     $(document).on('click', '.add-to-request-btn', function(e) {
       console.log(e.pageX);
@@ -161,3 +161,68 @@ app.controller('priceAddController', ['$scope', '$cookieStore', function($scope,
 }(jQuery));
 
 
+var cubes, list, math, myFirsobject, num, number, opposite, race, square, testWritingFunction,
+  slice = [].slice;
+
+number = 42;
+
+opposite = true;
+
+if (opposite) {
+  number = -42;
+}
+
+square = function(x) {
+  return x * x;
+};
+
+list = [1, 2, 3, 4];
+
+math = {
+  root: Math.sqrt,
+  square: square,
+  cube: function(x) {
+    return x * square(x);
+  }
+};
+
+race = function() {
+  var runners, winner;
+  winner = arguments[0], runners = 2 <= arguments.length ? slice.call(arguments, 1) : [];
+  return print(winner, runners);
+};
+
+if (typeof elvis !== "undefined" && elvis !== null) {
+  alert("I knew it!");
+}
+
+cubes = (function() {
+  var i, len, results;
+  results = [];
+  for (i = 0, len = list.length; i < len; i++) {
+    num = list[i];
+    results.push(math.cube(num));
+  }
+  return results;
+})();
+
+testWritingFunction = function(a, b, c, d, e) {
+  if (d == null) {
+    d = 'test';
+  }
+  if (e == null) {
+    e = [1, 2, 3, 4, 5];
+  }
+  return "Bla bla bla " + d + " " + c;
+};
+
+myFirsobject = {
+  brother: {
+    name: "Max",
+    age: 20
+  },
+  sister: {
+    name: "Ida",
+    age: 20
+  }
+};

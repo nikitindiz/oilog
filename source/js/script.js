@@ -24,7 +24,7 @@ app.controller('priceAddController', ['$scope', '$cookieStore', function($scope,
 
 (function($) {
   $(document).ready(function() {
-    if($('.news-items') !== undefined ) {
+    if($('.news-items').length) {
       setInterval(function() {
         scrollNewsRight();
       }, 5000);
@@ -33,6 +33,12 @@ app.controller('priceAddController', ['$scope', '$cookieStore', function($scope,
         scrollNewsRight();
         return false;
       });
+
+      $(document).on('click','.latest-news a.slide-right', function() {
+        scrollNewsLeft();
+        return false;
+      });
+    }
 
       $(document).on('click','.show-request-list', function() {
         $('.popup-price-window').addClass('visible');
@@ -51,12 +57,6 @@ app.controller('priceAddController', ['$scope', '$cookieStore', function($scope,
         $('.shade-bg').removeClass('visible');
         return false;
       });
-
-      $(document).on('click','.latest-news a.slide-right', function() {
-        scrollNewsLeft();
-        return false;
-      });
-    }
 
     $(document).on('click', '.add-to-request-btn', function(e) {
       console.log(e.pageX);
