@@ -1,0 +1,16 @@
+{
+  "name": "oilog-theme",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "1.3.13",
+    "angular-cookies": "1.3.13",
+    "jquery": "jquery#1.11.2",
+    "jquery-cookie": "1.4.1",
+    "ngstorage": "0.3.0"
+  },
+  "overrides": {
+    "jquery": {
+      "main": "dist/jquery.min.js"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "oilog-theme",
+  "version": "0.0.1",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "2.0.1",
+    "concat": "1.0.0",
+    "gulp": "3.8.11",
+    "gulp-clean": "^0.3.1",
+    "gulp-coffee": "2.3.1",
+    "gulp-concat": "2.4.3",
+    "gulp-filter": "2.0.1",
+    "gulp-plumber": "0.6.6",
+    "gulp-ruby-sass": "1.0.0-alpha.3",
+    "gulp-uglify": "1.1.0",
+    "gulp-util": "3.0.3",
+    "main-bower-files": "2.5.0"
+  }
+}

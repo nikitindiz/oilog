@@ -1,0 +1,884 @@
+$color-blue : #0e1f2c
+$color-orange : #FF6600
+$color-gray : #999
+$color-gray-02 : #ccc
+$color-gray-03 : #555
+$color-gray-04 : #fafafa
+
+=clearfix
+  &:after
+    content: ""
+    display: block
+    width: 100%
+    clear: both
+
+=text-shadow($x,$y,$blur,$color)
+  -moz-text-shadow: $x $y $blur $color
+  -o-text-shadow: $x $y $blur $color
+  -ms-text-shadow: $x $y $blur $color
+  -webkit-text-shadow: $x $y $blur $color
+  text-shadow: $x $y $blur $color
+
+=box-shadow($x,$y,$blur,$color)
+  -moz-box-shadow: $x $y $blur $color
+  -o-box-shadow: $x $y $blur $color
+  -ms-box-shadow: $x $y $blur $color
+  -webkit-box-shadow: $x $y $blur $color
+  box-shadow: $x $y $blur $color
+
+=text-shadow-val($val)
+  -moz-text-shadow: $val
+  -o-text-shadow: $val
+  -ms-text-shadow: $val
+  -webkit-text-shadow: $val
+  text-shadow: $val
+
+=border-radius($size)
+  -moz-border-radius: $size
+  -o-border-radius: $size
+  -ms-border-radius: $size
+  -webkit-border-radius: $size
+  border-radius: $size
+
+=transition($name,$duration)
+  -moz-transition: $name $duration
+  -webkit-transition: $name $duration
+  -o-transition: $name $duration
+  -ms-transition: $name $duration
+  transition: $name $duration
+
+=transition2($name1,$duration1,$name2,$duration2)
+  -moz-transition: $name1 $duration1,$name2 $duration2
+  -webkit-transition: $name1 $duration1,$name2 $duration2
+  -o-transition: $name1 $duration1,$name2 $duration2
+  -ms-transition: $name1 $duration1,$name2 $duration2
+  transition: $name1 $duration1,$name2 $duration2
+
+=transition3($name1,$duration1,$name2,$duration2,$name3,$duration3)
+  -moz-transition: $name1 $duration1,$name2 $duration2,$name3 $duration3
+  -webkit-transition: $name1 $duration1,$name2 $duration2,$name3 $duration3
+  -o-transition: $name1 $duration1,$name2 $duration2,$name3 $duration3
+  -ms-transition: $name1 $duration1,$name2 $duration2,$name3 $duration3
+  transition: $name1 $duration1,$name2 $duration2,$name3 $duration3
+
+=transition6($name1,$duration1,$name2,$duration2,$name3,$duration3,$name4,$duration4,$name5,$duration5,$name6,$duration6)
+  -moz-transition: $name1 $duration1,$name2 $duration2,$name3 $duration3,$name4 $duration4,$name5 $duration5,$name6 $duration6
+  -webkit-transition: $name1 $duration1,$name2 $duration2,$name3 $duration3,$name4 $duration4,$name5 $duration5,$name6 $duration6
+  -o-transition: $name1 $duration1,$name2 $duration2,$name3 $duration3,$name4 $duration4,$name5 $duration5,$name6 $duration6
+  -ms-transition: $name1 $duration1,$name2 $duration2,$name3 $duration3,$name4 $duration4,$name5 $duration5,$name6 $duration6
+  transition: $name1 $duration1,$name2 $duration2,$name3 $duration3,$name4 $duration4,$name5 $duration5,$name6 $duration6
+
+=animation($name,$duration)
+  -moz-animation: $name $duration
+  -webkit-animation: $name $duration
+  -o-animation: $name $duration
+  -ms-animation: $name $duration
+  animation: $name $duration
+
+=keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
+
++keyframes(nav-item-border)
+  0%
+    width: 0.1%
+    opacity: 0
+  1%
+    opacity: 1
+  100%
+    width: 100%
+
+*
+  box-sizing: border-box
+  -moz-box-sizing: border-box
+  -webkit-box-sizing: border-box
+  -o-box-sizing: border-box
+  -ms-box-sizing: border-box
+
+img
+  max-width: 100%
+
+.clearfix
+  display: block
+  width: 100%
+  clear: both
+
+body
+  margin: 0
+  padding: 0 0 0 0
+  &.admin-bar
+    padding: 35px 0 0 0
+  font-family: 'PT Sans', sans-serif
+  font-size: 16px
+  line-height: 1.5em
+
+.bg-square
+  position: absolute
+  width: 708px
+  height: 536px
+  background-image: url('../img/orange-box.png')
+  bottom: -10%
+  opacity: 0.2
+  left: -350px
+  z-index: 0
+
+.orange-background
+  background-image: url('../img/pattern-03.png')
+  background-size: 40px
+
+
+.orange-background
+  background-image: url('../img/pattern-01.png')
+  background-size: 40px
+
+.logo-img
+  max-width: 400px
+
+.blue-background
+  //background-color: $color-blue
+  background-image: url('../img/pattern-02.png')
+  background-size: 40px
+  color: white
+  a, a:active, a:visited
+    color: white
+
+.content-wrapper
+  max-width: 1080px
+  padding: 0 20px
+  margin: 0 auto
+  position: relative
+  +clearfix
+
+ul.inline-menu
+  list-style: none
+  margin: 0
+  padding: 0
+  li
+    display: inline-block
+    position: relative
+    a
+      text-decoration: none
+      &:hover
+        text-decoration: underline
+
+ul#top-menu
+  font-size: 0.7em
+  li
+    padding: 0.5em 1em 0.5em 0
+    &:after
+      content: '|'
+      display: inline-block
+      padding-left: 1em
+    &:last-child
+      &:after
+        content: ''
+    &.icon-login
+      a:before
+        font-family: "FontAwesome"
+        content: '\f090'
+        display: inline-block
+        padding-right: 0.5em
+    &.icon-cart
+      a:before
+        font-family: "FontAwesome"
+        content: '\f07a'
+        display: inline-block
+        padding-right: 0.5em
+    &.icon-req-list
+      a:before
+        font-family: "FontAwesome"
+        content: '\f022'
+        display: inline-block
+        padding-right: 0.5em
+
+.admin-bar
+  .top-menu-fixed
+    top: 32px
+
+
+.top-menu-fixed
+  position: fixed
+  width: 100%
+  z-index: 99
+  top: 0
+
+.top-message
+  background-color: green
+  position: fixed
+  top: 50%
+  left: -50%
+  z-index: 200
+  color: white
+  display: block
+  width: 200px
+  height: 65px
+  +border-radius(10px)
+  padding: 0.5em
+  text-align: center
+  opacity: 0
+  margin-left: -100px
+  margin-top: -32.5px
+  border: 2px solid white
+  +box-shadow(0,0,8px,rgba(0,0,0,0.5))
+
+.items-counter
+  &.has-item
+    background-color: $color-orange
+  background-color: $color-gray
+  font-size: 0.9em
+  margin-left: 0.5em
+  +border-radius(1em)
+  width: 2em
+  height: 2em
+  display: inline-block
+  text-align: center
+  padding: 0
+
+
+.logo-bar
+  display: table
+  width: 100%
+
+  #top-logo, #call-to-action
+    display: table-cell
+    vertical-align: middle
+    a img
+      margin: 2em 0
+  #call-to-action
+    text-align: right
+    color: $color-blue
+
+.item-marker
+  position: absolute
+  width: 200px
+  height: 200px
+  top: 0
+  left: 0
+  background-color: rgba(255, 108, 0, 0.5)
+  z-index: 0
+  opacity: 0
+  +border-radius(5px)
+  &.animated
+    +transition6(width,5s, height,5s,top,5s,left,5s,opacity,5s,background-color,5s)
+
+.navbar
+  border-top: 1px solid $color-gray-02
+  border-bottom: 1px solid $color-gray-02
+  .search-input
+    padding: 0.5em
+    input
+      margin-left: 0.7em
+      width: 130px
+      &:before
+        content: '\f002'
+        font-family: 'FontAwesome'
+        display: inline-block
+    .fa-search
+      position: relative
+      z-index: 99
+      margin-left: -1.7em
+      font-size: 0.8em
+      opacity: 0.5
+  ul.navbar-menu
+    font-family: 'PT Sans Narrow', sans-serif
+    font-weight: 400
+    li
+      display: block
+      float: left
+      &:before
+        content: ''
+        position: absolute
+        background-color: $color-blue
+        top: -2px
+        height: 2px
+        opacity: 0
+        width: 1%
+        +transition2(width, 0.3s, opacity, 0.1s)
+      &:hover
+        &:before
+          width: 100%
+          opacity: 1
+      a, a:active, a:visited
+        color: $color-gray
+      a:hover
+        text-decoration: none
+      a
+        display: block
+        text-align: center
+        padding: 0.7em 0.8em
+        border-left: 1px solid $color-gray-02
+      &:last-child
+        a
+          border-right: 1px solid $color-gray-02
+  .search-wrapper
+    vertical-align: middle
+
+.content-header
+  margin-top: 1em
+  margin-bottom: 1em
+  color: $color-gray-03
+  font-size: 1.25em
+  font-family: 'PT Sans Narrow', sans-serif
+  position: relative
+  z-index: 2
+  +clearfix
+  .header
+    display: inline-block
+    background-color: white
+    position: relative
+    z-index: 1
+    padding-right: 1em
+  hr
+    border: 0
+    border-top: 1px solid $color-gray-02
+    position: absolute
+    top: 0.1em
+    width: 100%
+    z-index: 0
+
+.main-content
+  color: $color-gray-03
+  margin-bottom: 5em
+  .post
+    text-align: center
+    display: block
+    float: left
+    width: 25%
+    border: 1px solid $color-gray-02
+    //border-right: 0
+    background-color: $color-gray-04
+    position: relative
+    //height: 330px
+    margin-left: -1px
+    a.learn-more
+      color: $color-gray-03
+      text-decoration: none
+      +transition(color, 0.2s)
+      &:active, &:visited
+        color: $color-gray-03
+      &:hover
+        color: $color-orange
+      h1
+        font-size: 1em
+        margin: 1.2em 0.2em 0.5em
+        font-family: 'PT Sans Narrow', sas-serif
+        font-weight: 400
+    h1.learn-more
+      font-size: 1em
+      margin: 1.2em 0.2em 0.5em
+      font-family: 'PT Sans Narrow', sas-serif
+      font-weight: 400
+    .price
+      font-size: 0.9em
+      opacity: 0.5
+      height: 150px
+      overflow: hidden
+      display: block
+      padding: 0 1em
+    &:after
+      content: ''
+      display: block
+      border-left: 2px solid $color-orange
+      border-top: 2px solid $color-orange
+      position: absolute
+      left: -1px
+      top: -1px
+      width: 10px
+      height: 10px
+      z-index: 2
+      +transition2(width, 0.2s, height, 0.2s)
+    &:hover
+      &:after
+        width: 70px
+        height: 70px
+    .thumb-wrapper
+      background-color: white
+      position: relative
+      .image
+        padding: 1.5em
+        position: relative
+        display: block
+        overflow: hidden
+        height: 194px
+        a.add-to-request-btn
+          display: block
+          font-size: 2em
+          color: rgba(0,0,0,0.2)
+          background-color: $color-orange
+          padding: 0.2em
+          width: 2em
+          transform: translate(-50%,-50%)
+          -moz-transform: translate(-50%,-50%)
+          -webkit-transform: translate(-50%,-50%)
+          -ms-transform: translate(-50%,-50%)
+          -o-transform: translate(-50%,-50%)
+          position: absolute
+          left: 50%
+          top: -50%
+          border: 1px solid white
+          z-index: 10
+          opacity: 0
+          +transition3(color, 0.4s, top, 0.4s, opacity, 0.4s)
+          &:hover
+            text-decoration: none
+            color: white
+            &:after
+              opacity: 1
+          &:after
+            font-size: 0.3em
+            color: white
+            content: "Add to price request list"
+            display: block
+            background-color: rgba(0,0,0,0.8)
+            display: block
+            position: absolute
+            bottom: -3.5em
+            width: 250%
+            text-align: center
+            left: 50%
+            transform: translate(-50%)
+            -moz-transform: translate(-50%)
+            -webkit-transform: translate(-50%)
+            -o-transform: translate(-50%)
+            -ms-transform: translate(-50%)
+            +border-radius(0.5em)
+            opacity: 0
+            +transition(opacity,0.2s)
+
+        img
+          border: 1px solid $color-gray-04
+        &:after
+          content: ""
+          display: block
+          position: absolute
+          background-color: black
+          opacity: 0
+          top: 0
+          left: 100%
+          width: 100%
+          height: 100%
+          +transition2(opacity, 0.2s, left, 0.2s)
+        &:hover
+          &:after
+            left: 0
+            opacity: 0.1
+          & > a.add-to-request-btn
+            opacity: 1
+            top: 50%
+      &:after
+        margin: 0
+        padding: 0
+        content: ""
+        background-color: $color-gray-02
+        display: block
+        width: 100%
+        height: 3px
+    //&:nth-child(4n+0)
+      border-right: 1px solid $color-gray-02
+
+.about-us, .latest-news
+  font-size: 0.9em
+  color: $color-gray-03
+  padding-bottom: 2em
+  h1.top-title
+    margin: 0
+    padding: 0
+    position: relative
+    font-size: 1.3em
+    text-transform: uppercase
+    font-family: 'PT Sans Narrow', sans-serif
+    font-weight: 400
+    color: $color-gray-03
+    display: inline-block
+    background-color: white
+    top: -0.6em
+    z-index: 10
+    padding-right: 1em
+    &.icon-about-us
+      &:before
+        content: "\f044"
+        font-family: 'FontAwesome'
+        color: $color-orange
+        padding-right: 0.5em
+    &.icon-latest-news
+      &:before
+        content: "\f1ea"
+        font-family: 'FontAwesome'
+        color: $color-orange
+        padding-right: 0.7em
+
+.latest-news
+  width: percentage(1/3) - 2%
+  position: relative
+  border-top: 1px solid $color-gray-02
+  float: left
+  margin-left: 2%
+  .controls
+    display: block
+    position: absolute
+    font-size: 0.7em
+    right: 0
+    top: -1.2em
+    margin: 0
+    background-color: $color-orange
+    a.slide-left, a.slide-right
+      color: white
+      padding: 0.4em 0.7em 0
+      &:hover
+        opacity: 0.7
+  .news-wrapper
+    overflow: hidden
+    ul.news-items
+      display: block
+      list-style: none
+      margin: 0
+      padding: 0
+      width: percentage(1*4)
+      +transition(margin,0.5s)
+      li
+        display: block
+        float: left
+        width: 25%
+      h1
+        font-size: 1.2em
+
+.about-us
+  width: percentage(1/3*2)
+  position: relative
+  border-top: 1px solid $color-gray-02
+  float: left
+  padding-right: 0.5em
+
+  ul#about-us-accordeon
+    list-style: none
+    padding: 0
+    margin: 1em 0 0 0
+    .description
+      padding: 0
+      overflow: hidden
+      height: 0
+      +transition2(height, 0.2s, padding, 0.2s)
+      &.active
+        padding: 0.8em 0 1.5em
+        height: auto
+    a.control-show
+      display: block
+      border-top: 1px solid $color-gray-02
+      border-bottom: 1px solid $color-gray-02
+      padding: 0.5em 0
+      color: $color-gray
+      opacity: 0.7
+      text-decoration: none
+      margin-top: -1px
+      //font-family: 'PT Sans Narrow', sans-serif
+      font-size: 1.1em
+      position: relative
+      &:before
+        content: '\f0c0'
+        font-family: 'FontAwesome'
+        background-color: $color-orange
+        display: inline-block
+        margin-right: 0.7em
+        color: white
+        padding: 0.2em 0.4em
+        width: 1.2em
+        text-align: center
+      &:after
+        content: '\f067'
+        font-family: 'FontAwesome'
+        display: inline-block
+        margin-right: 0.5em
+        color: $color-gray
+        padding: 0.2em 0.4em
+        position: absolute
+        right: 0
+      &.active
+        opacity: 1
+        &:after
+          content: '\f068'
+      &.our-people
+        &:before
+          content: '\f0c0'
+      &.contact-info
+        &:before
+          content: '\f041'
+
+.footer-line
+  height: 2em
+
+.footer-additional
+  font-size: 0.8em
+  padding-top: 1em
+  padding-bottom: 1.5em
+  color: $color-gray
+  background-size: 40px
+  .footer-nav
+    ul.footer-menu
+      list-style: none
+      padding: 0
+      margin: 0
+      li
+        display: inline-block
+        a, a:visited, a:active
+          color: $color-gray-03
+          text-decoration: none
+          padding-right: 0.5em
+          &:hover
+            opacity: 0.8
+          &:after
+            content: "|"
+            padding-left: 1em
+        &:last-child
+          a
+            &:after
+              content: ""
+
+.top-slider
+  position: relative
+  overflow: hidden
+  &:hover
+    ul.controls
+      li
+        top: 50%
+        opacity: 1
+  ul.controls
+    list-style: none
+    padding: 0
+    margin: 0
+    li
+      display: block
+      position: absolute
+      top: -50%
+      opacity: 0
+      transform: translate(0,-50%)
+      -moz-transform: translate(0,-50%)
+      -o-transform: translate(0,-50%)
+      -ms-transform: translate(0,-50%)
+      -webkit-transform: translate(0,-50%)
+      +transition2(top, 0.2s, opacity, 1s)
+      z-index: 10
+      a, a:visited, a:active
+        display: block
+        padding: 1em
+        background-color: rgba(255,255,255,0.5)
+        +border-radius(0.2em)
+        color: rgba(0,0,0,0.5)
+        +transition(background-color, 0.2s)
+        &:hover
+          background-color: rgba(255,255,255,1)
+      &.control-left
+        left: 1em
+      &.control-right
+        right: 1em
+  ul.slides
+    width: 100%
+    list-style: 0
+    padding: 0
+    margin: 0
+    &:after
+      content: ""
+      width: 100%
+      display: block
+      clear: both
+    li
+      opacity: 0
+      display: block
+      width: 100%
+      padding: 0
+      margin: 0
+      float: left
+      +transition(opacity, 1.5s)
+      &.active
+        opacity: 1
+      &:last-child
+        margin-left: -100%
+      img.slider-bg
+        width: 100%
+        padding: 0
+        margin: 0
+
+.shade-bg
+  position: fixed
+  width: 100%
+  height: 100%
+  z-index: 998
+  background-color: rgba(0,0,0,0.5)
+  display: none
+  &.visible
+    display: block
+
+.popup-price-window
+  a.close-list
+    position: absolute
+    right: 0.5em
+    top: 0.3em
+    color: $color-gray-02
+    +transition(color, 0.5s)
+    &:hover
+      color: $color-orange
+  position: fixed
+  top: -50%
+  left: 50%
+  transform: translate(-50%,-50%)
+  -moz-transform: translate(-50%,-50%)
+  -webkit-transform: translate(-50%,-50%)
+  -o-transform: translate(-50%,-50%)
+  -ms-transform: translate(-50%,-50%)
+  background-color: white
+  max-height: 80%
+  max-width: 90%
+  overflow-y: scroll
+  padding: 1em
+  border: 1em solid white
+  +box-shadow(2px,2px,10px,rgba(0,0,0,0.5))
+  +border-radius(5px)
+  opacity: 0
+  z-index: 0
+  +transition2(opacity, 0.5s, top, 0.5s)
+  &.visible
+    opacity: 1
+    display: block
+    z-index: 999
+    top: 50%
+  .product-list
+    max-width: 500px
+    margin: 0 auto
+    padding: 1em
+    .contact-info
+      input[type="text"]
+        border: 0
+        padding: 0.6em
+        width: 100%
+      label
+        display: block
+        overflow: hidden
+        +border-radius(0.2em)
+        border: 1px solid $color-gray
+        margin: 1em 0
+      .submit-btn
+        text-align: center
+        input[type="submit"]
+          display: inline-block
+          background-color: $color-gray
+          padding: 0.6em
+          border: 0
+          +border-radius(0.2em)
+          color: white
+          +transition(background-color, 0.5s)
+          &:hover
+            background-color: $color-orange
+          &:active
+            transform: translate(2px,2px)
+            -moz-transform: translate(2px,2px)
+            -webkit-transform: translate(2px,2px)
+            -o-transform: translate(2px,2px)
+            -ms-transform: translate(2px,2px)
+    .logo
+      text-align: center
+    h1
+      font-size: 1.2em
+      text-align: center
+      line-height: 1.5em
+      color: $color-gray
+    .hint
+      color: $color-gray
+      text-align: center
+      margin-bottom: 1em
+      font-size: 0.9em
+    ul
+      list-style: none
+      padding: 0
+      margin: 0
+      li
+        a.remove-item-from-list
+          position: absolute
+          right: 0.5em
+          top: 0.3em
+          color: $color-gray-02
+          +transition(color, 0.5s)
+          &:hover
+            color: $color-orange
+        .item-data-wrapper
+          color: $color-gray
+          font-size: 0.9em
+          a.item-header
+            color: $color-gray-03
+            font-family: 'PT Sans Narrow'
+            font-size: 1.2em
+            text-decoration: none
+            +transition(color, 0.5s)
+            &:hover
+              color: $color-orange
+        position: relative
+        display: block
+        padding: 1em
+        margin: 0.5em 0
+        +border-radius(0.5em)
+        border: 1px solid $color-gray-02
+        &:after
+          content: ''
+          display: block
+          width: 100%
+          clear: both
+        .item-thumb
+          width: 100px
+          float: left
+          img
+            max-width: 100%
+        .item-data-wrapper
+          margin-left: 110px
+
+/*
+  /* you can also define the transition style on the base class as well (.repeat-item)
+    .repeat-item.ng-enter,
+    .repeat-item.ng-leave {
+      -webkit-transition:0.5s linear all;
+      transition:0.5s linear all;
+    }
+
+    .repeat-item.ng-enter,
+    .repeat-item.ng-leave.ng-leave-active {
+      opacity:0;
+      height: 0px;
+    }
+    .repeat-item.ng-leave,
+    .repeat-item.ng-enter.ng-enter-active {
+      opacity:1;
+       height: 30px;
+    }
+    .repeat-item {
+
+      background: green;
+      margin-bottom: 5px;
+      height: 30px;
+    }
+    .delete {
+      float: right;
+    }
+
+.page-content-header
+  display: block
+  background-color: $color-gray-04
+  background-image: url()
+  border-bottom: 1px solid rgba(0,0,0,0.1)
+  border-top: 1px solid rgba(0,0,0,0.1)
+  h1
+    font-size: 1.2em
+    padding: 2em 0
+    margin: 0
+    font-family: "PT Sans Narrow", sans-serif
+
+.the-content
+  max-width: 700px
+
+.hide
+  display: none !important
+
+
+

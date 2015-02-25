@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ru" ng-app="priceReq">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href="favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+  <link rel="stylesheet" href="css/style.css">
+  <title>Oilog</title>
+</head>
+<body ng-controller="priceReqController as priceReqCtrl">
+
+  <div class="shade-bg"></div>
+
+  <div class="top-message">Item added to request price list</div>
+  <div class="item-marker"></div>
+  <!-- TOP MENU -->
+  <div class="blue-background top-menu">
+    <div class="content-wrapper">
+      <ul id="top-menu" class="inline-menu">
+        <li class="menu-item"><a href="#dummy-link">About Us</a></li>
+        <li class="menu-item"><a href="#dummy-link">Contact Us</a></li>
+        <li class="menu-item icon-req-list"><a href="#dummy-link">Request Price List</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="blue-background top-menu-fixed">
+    <div class="content-wrapper">
+      <ul id="top-menu" class="inline-menu">
+        <li class="menu-item"><a href="#dummy-link">About Us</a></li>
+        <li class="menu-item"><a href="#dummy-link">Contact Us</a></li>
+        <li class="menu-item icon-req-list">
+          <a href="#dummy-link" class="show-request-list">Request Price List
+            <span class="items-counter" ng-show="requestedItems.length">
+              {{requestedItems.length}}
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- / TOP MENU -->
+
+  <!-- TOP BAR -->
+  <div class="orange-background">
+    <div class="content-wrapper logo-bar">
+      <div id="top-logo">
+        <a href="#dummy-link">
+          <img src="img/logo_03.png" alt="" class="logo-img">
+        </a>
+      </div>
+      <div id="call-to-action">
+        <i class="fa fa-phone-square"></i> CALL US NOW +1 832 778 8811
+      </div>
+    </div>
+  </div>
+  <!-- / TOP BAR -->
+
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <div class="content-wrapper">
+      <ul class="navbar-menu inline-menu">
+          <li><a href="#dummy-link">Remote Monitoring Sysytems</a></li>
+          <li><a href="#dummy-link">Marginal Field Technology</a></li>
+          <li><a href="#dummy-link">Field Computers &amp; Accessories</a></li>
+          <li><a href="#dummy-link">Specialized Software</a></li>
+          <li><a href="#dummy-link">e-wireline Accessories</a></li>
+      </ul>
+      <div class="search-wrapper">
+        <form action="">
+          <div class="search-input">
+            <input type="text" placeholder="Search">
+            <i class="fa fa-search"></i>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- / NAVBAR -->
+
+  <!-- SLIDER -->
+  <div class="top-slider">
+    <ul class="slides">
+      <li class="active">
+          <img src="img/banner11-vc-1200x400.jpg" alt="" class="slider-bg">
+      </li>
+      <li>
+          <img src="img/banner31-vc-1200x400.jpg" alt="" class="slider-bg">
+      </li>
+    </ul>
+    <ul class="controls">
+      <li class="control-left"><a href=""><i class="fa fa-chevron-left"></i></a></li>
+      <li class="control-right"><a href=""><i class="fa fa-chevron-right"></i></a></li>
+    </ul>
+  </div>
+  <!-- / SLIDER -->
+
+  <!-- CONTENT -->
+  <div class="main-content">
+    <div class="content-wrapper" ng-controller="priceAddController as requestItem">
+      <div class="content-header">
+        <span class="header">Featured Products</span>
+        <hr>
+      </div>
+      <div class="post">
+        <div class="thumb-wrapper">
+          <div class="highliter"></div>
+          <div class="image">
+            <img src="img/OILOG-02-FieldPC.gif" alt="">
+            <a href="#dummy-link" class="add-to-request-btn"
+                                  ng-click="addItemToRequestList(priceReqCtrl,
+                                   {id: 123,
+                                    name: 'Modular PC Unit',
+                                    description: 'Datadata',
+                                    link: 'http://localhost:3000/',
+                                    img: 'http://localhost:3000/img/OILOG-02-FieldPC.gif'});">
+              <i class="fa fa-plus"></i>
+            </a>
+          </div>
+        </div>
+        <div class="description">
+          <a href="#dummy-link" class="learn-more">
+            <h1>Modular PC Unit</h1>
+          </a>
+          <span class="price">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, eius.</span>
+        </div>
+      </div>
+      <div class="post">
+        <div class="thumb-wrapper">
+          <div class="highliter"></div>
+          <div class="image">
+            <img src="img/OILOG-02-FieldPC.gif" alt="">
+            <a href="#dummy-link" class="add-to-request-btn"><i class="fa fa-plus"></i></a>
+          </div>
+        </div>
+        <div class="description">
+          <a href="#dummy-link" class="learn-more"><h1>Modular PC Unit</h1></a>
+          <span class="price">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, explicabo.</span>
+        </div>
+      </div>
+      <div class="post">
+        <div class="thumb-wrapper">
+          <div class="highliter"></div>
+          <div class="image">
+            <img src="img/OILOG-02-FieldPC.gif" alt="">
+            <a href="#dummy-link" class="add-to-request-btn"><i class="fa fa-plus"></i></a>
+          </div>
+        </div>
+        <div class="description">
+          <a href="#dummy-link" class="learn-more"><h1>Modular PC Unit</h1></a>
+          <span class="price">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, quaerat!</span>
+        </div>
+      </div>
+      <div class="post">
+        <div class="thumb-wrapper">
+          <div class="highliter"></div>
+          <div class="image">
+            <img src="img/OILOG-02-FieldPC.gif" alt="">
+            <a href="#dummy-link" class="add-to-request-btn"><i class="fa fa-plus"></i></a>
+          </div>
+        </div>
+        <div class="description">
+          <a href="#dummy-link" class="learn-more"><h1>Modular PC Unit</h1></a>
+          <span class="price">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, libero.</span>
+        </div>
+      </div>
+      <div class="post">
+        <div class="thumb-wrapper">
+          <div class="highliter"></div>
+          <div class="image">
+            <img src="img/OILOG-02-FieldPC.gif" alt="">
+            <a href="#dummy-link" class="add-to-request-btn"><i class="fa fa-plus"></i></a>
+          </div>
+        </div>
+        <div class="description">
+          <a href="#dummy-link" class="learn-more"><h1>Modular PC Unit</h1></a>
+          <span class="price">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, ad?</span>
+        </div>
+      </div>
+      <div class="post">
+        <div class="thumb-wrapper">
+          <div class="highliter"></div>
+          <div class="image">
+            <img src="img/OILOG-02-FieldPC.gif" alt="">
+            <a href="#dummy-link" class="add-to-request-btn"><i class="fa fa-plus"></i></a>
+          </div>
+        </div>
+        <div class="description">
+          <a href="#dummy-link" class="learn-more"><h1>Modular PC Unit</h1></a>
+          <span class="price">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, quia.</span>
+        </div>
+      </div>
+      <div class="post">
+        <div class="thumb-wrapper">
+          <div class="highliter"></div>
+          <div class="image">
+            <img src="img/OILOG-02-FieldPC.gif" alt="">
+            <a href="#dummy-link" class="add-to-request-btn"><i class="fa fa-plus"></i></a>
+          </div>
+        </div>
+        <div class="description">
+          <a href="#dummy-link" class="learn-more"><h1>Modular PC Unit</h1></a>
+          <span class="price">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, animi.</span>
+        </div>
+      </div>
+      <div class="post">
+        <div class="thumb-wrapper">
+          <div class="highliter"></div>
+          <div class="image">
+            <img src="img/OILOG-02-FieldPC.gif" alt="">
+            <a href="#dummy-link" class="add-to-request-btn"><i class="fa fa-plus"></i></a>
+          </div>
+        </div>
+        <div class="description">
+          <a href="#dummy-link" class="learn-more"><h1>Modular PC Unit</h1></a>
+          <span class="price">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, officia.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- / CONTENT -->
+  <div class="footer">
+    <div class="content-wrapper">
+      <div class="about-us">
+        <h1 class="top-title icon-about-us">About us</h1>
+        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum laudantium accusamus fuga ducimus dolore blanditiis possimus, consequuntur quia aperiam ipsum rerum officia quaerat, voluptates explicabo. Accusantium dicta, mollitia molestiae rerum! Dolorum aut animi sapiente fugit inventore, quasi sed, praesentium iure ipsa facilis, assumenda dolorem culpa harum voluptatem rerum suscipit autem.</div>
+        <ul id="about-us-accordeon">
+          <li>
+            <div class="">
+              <a href="#dummy-link" class="our-people control-show" data-target="about-us-accordeon">Our People</a>
+              <div class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur facere cum obcaecati maiores at molestias mollitia, reiciendis dicta corporis. Quod.</div>
+            </div>
+          </li>
+          <li>
+            <div class="">
+              <a href="#dummy-link" class="contact-info control-show" data-target="about-us-accordeon">Contact Information</a>
+              <div class="description">Nulla consequuntur excepturi doloribus quia! Labore laboriosam saepe facilis, delectus voluptates maiores iure incidunt sed harum voluptate eos, hic quod.</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="latest-news">
+        <h1 class="top-title icon-latest-news">Latest News</h1>
+        <div class="controls">
+          <a href="#dummy-link" class="slide-left"><i class="fa fa-chevron-left"></i></a>
+          <a href="#dummy-link" class="slide-right"><i class="fa fa-chevron-right"></i></a>
+        </div>
+        <div class="news-wrapper">
+          <ul class="news-items">
+            <li>
+              <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, atque.</h1>
+              <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et adipisci, exercitationem voluptate quo. Sint voluptate iure enim molestias voluptates possimus, nam. Unde rerum in, voluptatibus excepturi expedita, error odit facere autem sit mollitia voluptate, voluptates, sequi et odio dolore laudantium qui reiciendis officiis sunt. Obcaecati quia ratione hic consectetur iure!</div>
+            </li>
+            <li>
+              <h1>Illo quis minima nesciunt ut sapiente, ipsum tenetur, fugit suscipit!</h1>
+              <div>Maxime ipsum quam quae architecto inventore, nihil impedit omnis, necessitatibus magnam sit! Amet nostrum, odit, adipisci animi reprehenderit, modi optio aliquam quod non, veritatis mollitia. Molestiae laboriosam iste animi tenetur, odio unde. Quasi, temporibus consequuntur, ullam officiis debitis omnis nemo laborum maxime veniam nobis, illo. Ea, error facilis illum cupiditate.</div>
+            </li>
+            <li>
+              <h1>Optio debitis tempore corrupti eum eos reiciendis possimus esse odit.</h1>
+              <div>Repudiandae autem accusantium, rerum possimus veritatis! Nulla, qui! Iusto, nisi, natus? Quod non, ratione, autem ut velit incidunt labore minima quos. Corporis harum obcaecati maiores vitae, sapiente distinctio, beatae iure necessitatibus porro consectetur eligendi unde? Soluta debitis, repudiandae reprehenderit qui dicta sint eaque quisquam sit eveniet consequuntur rem ut totam.</div>
+            </li>
+            <li>
+              <h1>Architecto obcaecati, aliquid voluptate odio est. Sapiente vero repellendus eveniet.</h1>
+              <div>Voluptatibus nobis reprehenderit facilis earum, fugiat voluptate odio pariatur sunt cum numquam. Voluptatem dolorem est beatae ipsam quibusdam error illo magni odio. Quis mollitia impedit, est sunt quas expedita, tenetur sapiente officiis aspernatur maiores distinctio aut debitis nisi alias odit voluptates, iusto sint neque. Explicabo fuga illum suscipit quia! Totam!</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="blue-background footer-line"></div>
+  <div class="content-wrapper footer-additional">
+    <div class="footer-nav">
+      <ul class="footer-menu">
+        <li><a href="#dummy-link">About Us</a></li>
+        <li><a href="#dummy-link">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-copyright">
+      &copy; 2015 - 2016 Oilog Inc. All Rights Reserved.
+    </div>
+  </div>
+
+  <div class="popup-price-window">
+   <div class="product-wrapper">
+    <div class="product-list">
+      <div class="logo">
+        <img src="img/logo_02.png" alt="" class="logo-img">
+      </div>
+      <h1>You are going to request prices for selected items:</h1>
+      <ul>
+        <li ng-repeat="requestItem in requestedItems" ng-init="itemIndex = 1">
+          <div class="item-thumb">
+            <a href="{{requestItem.link}}">
+              <img ng-src="{{requestItem.img}}" alt="{{requestItem.name}}">
+            </a>
+          </div>
+          <div class="item-data-wrapper">
+            <div class="item-header"><a href="{{requestItem.link}}" class="item-header">{{requestItem.name}}</a></div>
+            <div class="item-descr">{{requestItem.description}}</div>
+          </div>
+          <a href="#delete-item" class="remove-item-from-list" ng-click="removeItem($index)"><i class="fa fa-close"></i></a>
+        </li>
+      </ul>
+      <div class="contact-info">
+        <h1>Contact information:</h1>
+        <div class="hint">Please fill contact information below to process</div>
+        <form action="">
+          <label for="name">
+            <input type="text" placeholder="Your Name">
+          </label>
+          <label for="email">
+            <input type="text" placeholder="Your Email">
+          </label>
+          <label for="phone">
+            <input type="text" placeholder="Phone">
+          </label>
+          <div class="submit-btn">
+            <input type="submit" value="Send Request">
+          </div>
+        </form>
+      </div>
+    </div>
+   </div>
+    <a href="#close-list" class="close-list"><i class="fa fa-close"></i></a>
+  </div>
+
+  <!-- Vendor JS -->
+  <script src="js/vendor.js"></script>
+  <!-- Page JS -->
+  <script src="js/script.js"></script>
+</body>
+</html>
