@@ -23,7 +23,7 @@ function wpt_product_posttype() {
         'not_found' => __( 'No products found' ),
         'not_found_in_trash' => __( 'No products found in trash' )
       ),
-      'taxonomies' => array('category'),
+      //'taxonomies' => array('category'),
       'public' => true,
       'supports' => array( 'title', 'editor', 'thumbnail', 'comments' ),
       'capability_type' => 'post',
@@ -31,14 +31,43 @@ function wpt_product_posttype() {
       'menu_position' => 5,
       'register_meta_box_cb' => 'add_products_metaboxes',
       'menu_icon' => '',
-      'has_archive' => 'items_category'
+      'has_archive' => true
     )
   );
+
+  flush_rewrite_rules( false );
+
+
 }
 
 add_action( 'init', 'wpt_product_posttype' );
 
-register_taxonomy_for_object_type( 'category', 'products' );
+
+function my_taxonomies_products() {
+  $labels = array(
+    'name'              => _x( 'Product Categories', 'taxonomy general name' ),
+    'singular_name'     => _x( 'Product Category', 'taxonomy singular name' ),
+    'search_items'      => __( 'Search Product Categories' ),
+    'all_items'         => __( 'All Product Categories' ),
+    'parent_item'       => __( 'Parent Product Category' ),
+    'parent_item_colon' => __( 'Parent Product Category:' ),
+    'edit_item'         => __( 'Edit Product Category' ),
+    'update_item'       => __( 'Update Product Category' ),
+    'add_new_item'      => __( 'Add New Product Category' ),
+    'new_item_name'     => __( 'New Product Category' ),
+    'menu_name'         => __( 'Product Categories' ),
+  );
+  $args = array(
+    'labels' => $labels,
+    'hierarchical' => true,
+  );
+  register_taxonomy( 'product_category', 'products', $args );
+}
+
+add_action( 'init', 'my_taxonomies_products', 0 );
+
+
+//register_taxonomy_for_object_type( 'category', 'products' );
 
 
 // Add the Products Meta Boxes
