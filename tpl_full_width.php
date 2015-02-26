@@ -1,17 +1,22 @@
-<?php get_header(); ?>
+<?php
+/*
+Template Name: Full Width w/o slider bar
+*/
+?>
 
+<?php get_header(); ?>
 
 
   <!-- CONTENT -->
   <div class="main-content">
-    <div class="content-wrapper" ng-controller="priceAddController as requestItem">
+    <div ng-controller="priceAddController as requestItem">
 
       <?php
         // Check if there are any posts to display
         if ( have_posts() ) : ?>
 
         <header class="archive-header">
-        <!--h1 class="archive-title">Category: <?php single_cat_title( '', false ); ?></h1-->
+        <h1 class="archive-title">Category: <?php single_cat_title( '', false ); ?></h1>
 
 
         <?php
@@ -31,9 +36,9 @@
         <div class="entry">
         <?php the_content(); ?>
 
-         <!--p class="postmetadata"><?php
+         <p class="postmetadata"><?php
           comments_popup_link( 'No comments yet', '1 comment', '% comments', 'comments-link', 'Comments closed');
-        ?></p-->
+        ?></p>
         </div>
 
         <?php endwhile;
@@ -49,3 +54,4 @@
   </div>
  <!-- / CONTENT -->
   <?php get_footer(); ?>
+

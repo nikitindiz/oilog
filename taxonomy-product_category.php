@@ -72,7 +72,7 @@ function content($limit) {
         <div class="image"><img src="<?php echo $image; ?>" alt="" />
             <a class="add-to-request-btn" href="#dummy-link"
             ng-click="addItemToRequestList(priceReqCtrl,
-                                               {id: 31,
+                                               {id: '<?php echo get_the_ID(); ?>',
                                                 name: '<?php echo get_the_title(); ?>',
                                                 description: '<?php echo excerpt(25); ?>',
                                                 link: '<?php the_permalink() ?>',

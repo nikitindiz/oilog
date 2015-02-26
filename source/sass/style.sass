@@ -1,9 +1,20 @@
 $color-blue : #0e1f2c
+$color-blue-02 : #0f5081
 $color-orange : #FF6600
 $color-gray : #999
 $color-gray-02 : #ccc
 $color-gray-03 : #555
 $color-gray-04 : #fafafa
+
+$breakpint01 : 520px
+$breakpint02 : 764px
+$breakpint03 : 861px
+$breakpint04 : 913px
+$breakpint05 : 745px
+$breakpint06 : 550px
+$breakpint07 : 1084px
+$breakpint08 : 989px
+$breakpint09 : 907px
 
 =clearfix
   &:after
@@ -112,6 +123,8 @@ img
 body
   margin: 0
   padding: 32px 0 0 0
+  @media screen and (max-width: $breakpint01)
+    padding: 45px 0 0 0
   &.admin-bar
     padding: 35px 0 0 0
   font-family: 'PT Sans', sans-serif
@@ -139,6 +152,9 @@ body
 
 .logo-img
   max-width: 400px
+  @media screen and (max-width: $breakpint06)
+    max-width: 100%
+
 
 .blue-background
   //background-color: $color-blue
@@ -155,29 +171,88 @@ body
   position: relative
   +clearfix
 
+.responsive-top-menu-button
+  display: none
+  font-size: 2em
+  padding: 0.2em
+  @media screen and (max-width: $breakpint01)
+    display: block
+    text-align: center
+
+.responsive-nav-menu-button
+  display: none
+  font-size: 2em
+  padding: 0.2em
+  @media screen and (max-width: $breakpint03)
+    display: block
+    text-align: center
+
+#responsive-nav-menu
+  display: block
+  @media screen and (max-width: $breakpint03)
+    display: none
+
 ul.inline-menu
   list-style: none
   margin: 0
   padding: 0
   li
     display: inline-block
+    @media screen and (max-width: $breakpint01)
+      display: block
+      width: 100%
     position: relative
     a
       text-decoration: none
       &:hover
         text-decoration: underline
 
+.responsive-top-menu
+  display: inline-block
+  overflow: hidden
+  @media screen and (max-width: $breakpint01)
+    display: none
+
+=hover-top-link
+  a
+    padding: 0.5em 1em 0.5em 1em
+    display: block !important
+    width: 100% !important
+    +transition2(color, 0.2s, background-color, 0.2s)
+    &:hover
+      color: white
+      background-color: $color-orange
+      text-decoration: none !important
+
 .request-list
   font-size: 0.7em
   display: inline-block
+  @media screen and (max-width: $breakpint01)
+    display: block
+    padding: 0 !important
+    font-size: 1em
+    margin-bottom: 1em
+    +hover-top-link
   a, a:visited, a:active
     text-decoration: none
     &:hover
       text-decoration: underline
 
+
 ul#top-menu
   font-size: 0.7em
   display: inline-block
+  @media screen and (max-width: $breakpint01)
+    font-size: 1em
+    display: block
+    li
+      padding: 0 !important
+      &:after
+        content: '' !important
+        display: none !important
+        padding-left: 1em
+      +hover-top-link
+
   li
     padding: 0.5em 1em 0.5em 0
     &:after
@@ -216,6 +291,9 @@ ul#top-menu
   width: 100%
   z-index: 99
   top: 0
+  @media screen and (max-width: $breakpint01)
+    //position: absolute
+    top: 0
 
 .top-message
   background-color: green
@@ -253,15 +331,28 @@ ul#top-menu
 .logo-bar
   display: table
   width: 100%
-
+  @media screen and (max-width: $breakpint02)
+    display: block
+    width: 100%
   #top-logo, #call-to-action
     display: table-cell
     vertical-align: middle
+    @media screen and (max-width: $breakpint02)
+      display: block
+      width: 100%
+      text-align: center
+      a img
+        max-width: 100% !important
     a img
       margin: 2em 0
+      @media screen and (max-width: $breakpint02)
+        margin: 2em 0 0 0
+
   #call-to-action
     text-align: right
     color: $color-blue
+    @media screen and (max-width: $breakpint02)
+      padding: 1em
 
 .item-marker
   position: absolute
@@ -300,6 +391,8 @@ ul#top-menu
     li
       display: block
       float: left
+      @media screen and (max-width: $breakpint03)
+        float: none
       &:before
         content: ''
         position: absolute
@@ -317,16 +410,25 @@ ul#top-menu
         color: $color-gray
       a:hover
         text-decoration: none
+        @media screen and (max-width: $breakpint03)
+          background-color: $color-gray-04
       a
         display: block
         text-align: center
         padding: 0.7em 0.8em
         border-left: 1px solid $color-gray-02
+        @media screen and (max-width: $breakpint03)
+          border: 0
       &:last-child
         a
           border-right: 1px solid $color-gray-02
+          @media screen and (max-width: $breakpint03)
+            border: 0
   .search-wrapper
     vertical-align: middle
+    @media screen and (max-width: $breakpint03)
+      text-align: center
+      padding-bottom: 1em
     form.searchform
       & > div
         padding-top: 10px
@@ -336,11 +438,15 @@ ul#top-menu
           height: 21px
         input[type="text"]
           width: 100px
+          @media screen and (max-width: $breakpint03)
+            width: 70%
           margin-left: 10px
         input[type="submit"]
           border: 1px solid $color-gray
           background-color: $color-gray-02
           opacity: 0.5
+          @media screen and (max-width: $breakpint03)
+            width: 20%
           +transition3(opacity, 0.2s, background-color, 0.2s, color, 0.2s)
           &:hover
             background-color: $color-orange
@@ -370,6 +476,16 @@ ul#top-menu
     width: 100%
     z-index: 0
 
+#responsive-nav-menu
+  @media screen and (max-width: $breakpint07)
+    font-size: 0.9em
+  @media screen and (max-width: $breakpint08)
+    font-size: 0.8em
+  @media screen and (max-width: $breakpint09)
+    font-size: 0.75em
+  @media screen and (max-width: $breakpint03)
+    font-size: 1em
+
 .main-content
   color: $color-gray-03
   margin-bottom: 5em
@@ -378,11 +494,20 @@ ul#top-menu
     display: block
     float: left
     width: 25%
+    @media screen and (max-width: $breakpint04)
+      width: percentage(1/3)
+    @media screen and (max-width: $breakpint05)
+      width: percentage(1/2)
+    @media screen and (max-width: $breakpint06)
+      width: 100%
+      margin-bottom: 1em
     border: 1px solid $color-gray-02
     //border-right: 0
     background-color: $color-gray-04
     position: relative
     height: 420px
+    @media screen and (max-width: $breakpint06)
+      height: auto
     margin-left: -1px
     a.learn-more
       color: $color-gray-03
@@ -406,6 +531,9 @@ ul#top-menu
       font-size: 0.9em
       opacity: 0.5
       height: 150px
+      @media screen and (max-width: $breakpint06)
+        height: auto
+        padding-bottom: 1em
       overflow: hidden
       display: block
       padding: 0 1em
@@ -543,6 +671,13 @@ ul#top-menu
 
 .latest-news
   width: percentage(1/3) - 2%
+  @media screen and (max-width: $breakpint04)
+    width: 48%
+  @media screen and (max-width: $breakpint05)
+    width: 100%
+    float: none
+    margin-left: 0 !important
+    margin-top: 1em
   position: relative
   border-top: 1px solid $color-gray-02
   float: left
@@ -578,6 +713,11 @@ ul#top-menu
 
 .about-us
   width: percentage(1/3*2)
+  @media screen and (max-width: $breakpint04)
+    width: 48%
+  @media screen and (max-width: $breakpint05)
+    width: 100%
+    float: none
   position: relative
   border-top: 1px solid $color-gray-02
   float: left
@@ -646,11 +786,20 @@ ul#top-menu
   padding-bottom: 1.5em
   color: $color-gray
   background-size: 40px
+  @media screen and (max-width: $breakpint04)
+    text-align: center
   .footer-nav
     ul.footer-menu
       list-style: none
       padding: 0
       margin: 0
+      @media screen and (max-width: $breakpint04)
+        display: block
+        width: 100%
+        text-align: center
+        li
+          a:after
+            display: none
       li
         display: inline-block
         a, a:visited, a:active
@@ -733,8 +882,9 @@ ul#top-menu
 
 .shade-bg
   position: fixed
+  top: -32px
   width: 100%
-  height: 100%
+  height: 120%
   z-index: 998
   background-color: rgba(0,0,0,0.5)
   display: none
@@ -769,6 +919,10 @@ ul#top-menu
   opacity: 0
   z-index: 0
   +transition2(opacity, 0.5s, top, 0.5s)
+  @media screen and (max-width: $breakpint04)
+    width: 99%
+    height: 99%
+    border: 3px
   &.visible
     opacity: 1
     display: block
@@ -857,10 +1011,19 @@ ul#top-menu
         .item-thumb
           width: 100px
           float: left
+          @media screen and (max-width: $breakpint03)
+            width: 100%
+            float: none
+            text-align: center
           img
             max-width: 100%
         .item-data-wrapper
           margin-left: 110px
+          @media screen and (max-width: $breakpint03)
+            width: 100%
+            float: none
+            margin-left: 0
+            text-align: center
 
 /*
   /* you can also define the transition style on the base class as well (.repeat-item)
@@ -926,6 +1089,8 @@ ul#top-menu
 
   .product-content
     margin-left: 320px
+    @media screen and (max-width: $breakpint03)
+      margin-left: 0
     h1
       font-size: 1.5em
   .thumb
@@ -934,6 +1099,44 @@ ul#top-menu
     width: 300px
     padding: 1em
     border: 1px solid rgba(0,0,0,0.1)
+    @media screen and (max-width: $breakpint03)
+      float: none
+      width: 100%
+      text-align: center
+
+#request_message_result > div
+  display: block
+  width: 100%
+  background-color: $color-orange
+  padding: 0.5em 1em
+  +border-radius(0.5em)
+  text-align: center
+  color: white
+
+a.slider_news
+  color: $color-gray
+  text-decoration: none
+  +transition(color, 0.2s)
+  font-family: 'PT Sans Narrow', sans-serif
+  font-weight: 400
+  font-size: 1.1em
+  &:visited
+    color: $color-gray
+  &:hover
+    color: $color-orange
+
+a
+
+  +transition(color, 0.2s)
+  color: $color-blue-02
+  display: inline-block
+  &:active
+    color: red
+  &:visited
+    color: $color-orange
+    opacity: 0.7
+  &:hover
+    color: orange
 
 /*.css3spinner
   +border-radius(50%)

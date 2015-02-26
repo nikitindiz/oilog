@@ -23,22 +23,27 @@
 
   <div class="blue-background top-menu-fixed">
     <div class="content-wrapper">
-      <?php /* Primary navigation */
-        wp_nav_menu( array(
-        'menu'              => 'topmenu',
-        'theme_location'    => 'topmenu',
-        'depth'             => 1,
-        'container'         => '',
-        'menu_class'        => 'inline-menu',
-        'menu_id'           => 'top-menu'
-        ));
-      ?>
-      <span class="request-list">
-        <a href="#dummy-link" class="show-request-list">Request Price List
-          <span class="items-counter" ng-show="requestedItems.length" ng-bind="{{requestedItems.length}}">
-          </span>
-        </a>
+      <span class="responsive-top-menu-button">
+        <a id="show-top-menu-items" href="#show-top-menu"><i class="fa fa-bars"></i></a>
       </span>
+      <div class="responsive-top-menu" id="responsive-top-menu">
+        <?php /* Primary navigation */
+          wp_nav_menu( array(
+          'menu'              => 'topmenu',
+          'theme_location'    => 'topmenu',
+          'depth'             => 1,
+          'container'         => '',
+          'menu_class'        => 'inline-menu',
+          'menu_id'           => 'top-menu'
+          ));
+        ?>
+        <span class="request-list">
+          <a href="#dummy-link" class="show-request-list">Request Price List
+            <span class="items-counter" ng-show="$storage.requestedItems.length" ng-bind="$storage.requestedItems.length">
+            </span>
+          </a>
+        </span>
+      </div>
     </div>
   </div>
 
@@ -64,19 +69,24 @@
   <!-- NAVBAR -->
   <div class="navbar">
     <div class="content-wrapper">
-      <?php /* Primary navigation */
-        wp_nav_menu( array(
-        'menu'              => 'primary',
-        'theme_location'    => 'primary',
-        'depth'             => 1,
-        'container'         => '',
-        'menu_class'        => 'navbar-menu inline-menu'
-        ));
-      ?>
-      <div class="search-wrapper">
-        <?php if ( is_active_sidebar( 'oilog_search_bar' ) ) : ?>
-          <?php dynamic_sidebar( 'oilog_search_bar' ); ?>
-        <?php endif; ?>
+      <span class="responsive-nav-menu-button">
+        <a id="show-nav-menu-items" href="#show-nav-menu"><i class="fa fa-bars"></i></a>
+      </span>
+      <div id="responsive-nav-menu">
+        <?php /* Primary navigation */
+          wp_nav_menu( array(
+          'menu'              => 'primary',
+          'theme_location'    => 'primary',
+          'depth'             => 1,
+          'container'         => '',
+          'menu_class'        => 'navbar-menu inline-menu'
+          ));
+        ?>
+        <div class="search-wrapper">
+          <?php if ( is_active_sidebar( 'oilog_search_bar' ) ) : ?>
+            <?php dynamic_sidebar( 'oilog_search_bar' ); ?>
+          <?php endif; ?>
+        </div>
       </div>
     </div>
   </div>

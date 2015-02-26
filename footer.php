@@ -21,13 +21,13 @@
 
   <div class="popup-price-window">
    <div class="product-wrapper">
-    <div class="product-list" ng-show="requestedItems.length">
+    <div class="product-list" ng-show="$storage.requestedItems.length">
       <div class="logo">
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo_02.png" alt="" class="logo-img">
       </div>
       <h1>You are going to request prices for selected items:</h1>
       <ul>
-        <li ng-repeat="requestItem in requestedItems" ng-init="itemIndex = 1">
+        <li ng-repeat="requestItem in $storage.requestedItems" ng-init="itemIndex = 1">
           <div class="item-thumb">
             <a href="{{requestItem.link}}">
               <img ng-src="{{requestItem.img}}" alt="{{requestItem.name}}">
@@ -43,7 +43,7 @@
       <div class="contact-info">
         <h1>Contact information:</h1>
         <div class="hint">Please fill contact information below to process</div>
-        <form action="">
+        <form ng-submit="sendPriceRequest()" ng-controller="priceReqFormController as priceReqFormCtrl">
           <label for="name">
             <input type="text" placeholder="Your Name">
           </label>
@@ -59,7 +59,7 @@
         </form>
       </div>
     </div>
-    <div class="product-list" ng-hide="requestedItems.length">
+    <div class="product-list" ng-hide="$storage.requestedItems.length">
       <div class="logo">
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo_02.png" alt="" class="logo-img">
       </div>
@@ -70,6 +70,7 @@
     </div>
    </div>
     <a href="#close-list" class="close-list"><i class="fa fa-close"></i></a>
+    <div id="request_message_result"></div>
   </div>
 
   <?php wp_footer(); ?>
