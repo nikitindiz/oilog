@@ -41,7 +41,10 @@ function content($limit) {
 
   <!-- SLIDER -->
   <div class="top-slider">
-    <ul class="slides">
+    <?php if ( is_active_sidebar( 'oilog_slider' ) ) : ?>
+      <?php dynamic_sidebar( 'oilog_slider' ); ?>
+    <?php endif; ?>
+    <!--ul class="slides">
       <li class="active">
           <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/banner11-vc-1200x400.jpg" alt="" class="slider-bg">
       </li>
@@ -52,7 +55,7 @@ function content($limit) {
     <ul class="controls">
       <li class="control-left"><a href=""><i class="fa fa-chevron-left"></i></a></li>
       <li class="control-right"><a href=""><i class="fa fa-chevron-right"></i></a></li>
-    </ul>
+    </ul-->
   </div>
   <!-- / SLIDER -->
 

@@ -2,13 +2,20 @@
   <div class="blue-background footer-line"></div>
   <div class="content-wrapper footer-additional">
     <div class="footer-nav">
-      <ul class="footer-menu">
-        <li><a href="#dummy-link">About Us</a></li>
-        <li><a href="#dummy-link">Contact Us</a></li>
-      </ul>
+      <?php /* Primary navigation */
+        wp_nav_menu( array(
+        'menu'              => 'footer',
+        'theme_location'    => 'footer',
+        'depth'             => 1,
+        'container'         => '',
+        'menu_class'        => 'footer-menu'
+        ));
+      ?>
     </div>
     <div class="footer-copyright">
-      &copy; 2015 - 2016 Oilog Inc. All Rights Reserved.
+        <?php if ( is_active_sidebar( 'oilog_copyright' ) ) : ?>
+          <?php dynamic_sidebar( 'oilog_copyright' ); ?>
+        <?php endif; ?>
     </div>
   </div>
 

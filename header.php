@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <link href="favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
   <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/style.css">
+  <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.png">
   <?php wp_head(); ?>
   <!--title><?php bloginfo('name'); ?> | <?php is_front_page() ? bloginfo('description') : wp_title(''); ?></title-->
   <title><?php bloginfo('name'); ?></title>
@@ -22,17 +23,22 @@
 
   <div class="blue-background top-menu-fixed">
     <div class="content-wrapper">
-      <ul id="top-menu" class="inline-menu">
-        <li class="menu-item"><a href="<?php echo get_home_url(); ?>/about-us/">About Us</a></li>
-        <li class="menu-item"><a href="<?php echo get_home_url(); ?>/contact-us/">Contact Us</a></li>
-        <li class="menu-item icon-req-list">
-          <a href="#dummy-link" class="show-request-list">Request Price List
-            <span class="items-counter" ng-show="requestedItems.length">
-              {{requestedItems.length}}
-            </span>
-          </a>
-        </li>
-      </ul>
+      <?php /* Primary navigation */
+        wp_nav_menu( array(
+        'menu'              => 'topmenu',
+        'theme_location'    => 'topmenu',
+        'depth'             => 1,
+        'container'         => '',
+        'menu_class'        => 'inline-menu',
+        'menu_id'           => 'top-menu'
+        ));
+      ?>
+      <span class="request-list">
+        <a href="#dummy-link" class="show-request-list">Request Price List
+          <span class="items-counter" ng-show="requestedItems.length" ng-bind="{{requestedItems.length}}">
+          </span>
+        </a>
+      </span>
     </div>
   </div>
 
@@ -47,7 +53,9 @@
         </a>
       </div>
       <div id="call-to-action">
-        <i class="fa fa-phone-square"></i> CALL US NOW +1 832 778 8811
+        <?php if ( is_active_sidebar( 'oilog_call_us' ) ) : ?>
+          <?php dynamic_sidebar( 'oilog_call_us' ); ?>
+        <?php endif; ?>
       </div>
     </div>
   </div>
@@ -66,12 +74,9 @@
         ));
       ?>
       <div class="search-wrapper">
-        <form action="">
-          <div class="search-input">
-            <input type="text" placeholder="Search">
-            <i class="fa fa-search"></i>
-          </div>
-        </form>
+        <?php if ( is_active_sidebar( 'oilog_search_bar' ) ) : ?>
+          <?php dynamic_sidebar( 'oilog_search_bar' ); ?>
+        <?php endif; ?>
       </div>
     </div>
   </div>

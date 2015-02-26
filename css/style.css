@@ -106,16 +106,26 @@ ul.inline-menu {
       ul.inline-menu li a:hover {
         text-decoration: underline; }
 
+.request-list {
+  font-size: 0.7em;
+  display: inline-block; }
+  .request-list a, .request-list a:visited, .request-list a:active {
+    text-decoration: none; }
+    .request-list a:hover, .request-list a:visited:hover, .request-list a:active:hover {
+      text-decoration: underline; }
+
 ul#top-menu {
-  font-size: 0.7em; }
+  font-size: 0.7em;
+  display: inline-block; }
   ul#top-menu li {
-    padding: 0.5em 1em 0.5em 0; }
+    padding: 0.5em 1em 0.5em 0;
+    /*&:last-child
+     * &:after
+     *   content: '' */ }
     ul#top-menu li:after {
       content: "|";
       display: inline-block;
       padding-left: 1em; }
-    ul#top-menu li:last-child:after {
-      content: ""; }
     ul#top-menu li.icon-login a:before {
       font-family: "FontAwesome";
       content: "";
@@ -271,6 +281,28 @@ ul#top-menu {
         border-right: 1px solid #ccc; }
   .navbar .search-wrapper {
     vertical-align: middle; }
+    .navbar .search-wrapper form.searchform > div {
+      padding-top: 10px; }
+      .navbar .search-wrapper form.searchform > div label.screen-reader-text {
+        display: none; }
+      .navbar .search-wrapper form.searchform > div input {
+        height: 21px; }
+      .navbar .search-wrapper form.searchform > div input[type="text"] {
+        width: 100px;
+        margin-left: 10px; }
+      .navbar .search-wrapper form.searchform > div input[type="submit"] {
+        border: 1px solid #999;
+        background-color: #ccc;
+        opacity: 0.5;
+        -moz-transition: opacity 0.2s, background-color 0.2s, color 0.2s;
+        -webkit-transition: opacity 0.2s, background-color 0.2s, color 0.2s;
+        -o-transition: opacity 0.2s, background-color 0.2s, color 0.2s;
+        -ms-transition: opacity 0.2s, background-color 0.2s, color 0.2s;
+        transition: opacity 0.2s, background-color 0.2s, color 0.2s; }
+        .navbar .search-wrapper form.searchform > div input[type="submit"]:hover {
+          background-color: #FF6600;
+          opacity: 1;
+          color: white; }
 
 .content-header {
   margin-top: 1em;
@@ -938,3 +970,18 @@ ul#top-menu {
     width: 300px;
     padding: 1em;
     border: 1px solid rgba(0, 0, 0, 0.1); }
+
+/*.css3spinner
+ * +border-radius(50%)
+ * background-color: red
+ * width: 100px
+ * height: 100px
+ * position: absolute
+ * left: 50%
+ * top: 50%
+ * transform: translate(-50%,-50%)
+ * &:after
+ *   position: absolute
+ *   width: 100%
+ *   height: 100%
+ *   border: */

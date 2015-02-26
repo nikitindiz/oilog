@@ -60,10 +60,10 @@ gulp.task('taskCoffee', function() {
 
 // Browser Live View
 gulp.task('browserSync', function() {
-  /*  browserSync({
+    /*browserSync({
         server: {
             baseDir: "../",
-            index: "index.html"
+            index: "spinner.htm"
         }
     });*/
 });

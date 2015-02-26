@@ -1,6 +1,7 @@
 <?php
   register_nav_menus( array(
       'primary' => __( 'Primary Menu', 'oilog' ),
+      'topmenu' => __( 'Top Menu', 'oilog' ),
       'footer' => __( 'Footer Menu', 'oilog' ),
   ) );
 
@@ -160,109 +161,37 @@ add_theme_support( 'post-thumbnails' );
 
 function empowerment_widgets_init() {
   register_sidebar( array(
-    'name' => 'Top Slider',
-    'id' => 'empowerment_top_slider',
-    'before_widget' => '',
-    'after_widget' => '',
-    'before_title' => '',
-    'after_title' => '',
-  ) );
-
-
-  register_sidebar( array(
-    'name' => 'Top Message Frame',
-    'id' => 'empowerment_top_message',
-    'before_widget' => '',
-    'after_widget' => '',
-    'before_title' => '',
-    'after_title' => '',
-  ) );
-
-  register_sidebar( array(
-    'name' => 'Top Frame 1 (2/4)',
-    'id' => 'empowerment_top_frame1',
-    'before_widget' => '',
-    'after_widget' => '',
-    'before_title' => '<h1>',
-    'after_title' => '</h1>',
-  ) );
-
-  register_sidebar( array(
-    'name' => 'Top Frame 2 (1/4)',
-    'id' => 'empowerment_top_frame2',
-    'before_widget' => '',
-    'after_widget' => '',
-    'before_title' => '<h1>',
-    'after_title' => '</h1>',
-  ) );
-
-  register_sidebar( array(
-    'name' => 'Top Frame 3 (1/4)',
-    'id' => 'empowerment_top_frame3',
-    'before_widget' => '',
-    'after_widget' => '',
-    'before_title' => '<h1>',
-    'after_title' => '</h1>',
-  ) );
-
-  register_sidebar( array(
-    'name' => 'Bottom Slider',
-    'id' => 'empowerment_bottom_slider',
+    'name' => 'Call Us Widget',
+    'id' => 'oilog_call_us',
     'before_widget' => '',
     'after_widget' => '',
     'before_title' => '',
     'after_title' => '',
   ) );
   register_sidebar( array(
-    'name' => 'Bottom 1st col',
-    'id' => 'empowerment_bottom-1st_col',
-    'before_widget' => '',
-    'after_widget' => '',
-    'before_title' => '<h1>',
-    'after_title' => '</h1>',
-  ) );
-  register_sidebar( array(
-    'name' => 'Bottom 2st col',
-    'id' => 'empowerment_bottom-2st_col',
-    'before_widget' => '',
-    'after_widget' => '',
-    'before_title' => '<h1>',
-    'after_title' => '</h1>',
-  ) );
-  register_sidebar( array(
-    'name' => 'Bottom 3st col',
-    'id' => 'empowerment_bottom-3st_col',
-    'before_widget' => '',
-    'after_widget' => '',
-    'before_title' => '<h1>',
-    'after_title' => '</h1>',
-  ) );
-  register_sidebar( array(
-    'name' => 'Bottom 4st col',
-    'id' => 'empowerment_bottom-4st_col',
-    'before_widget' => '',
-    'after_widget' => '',
-    'before_title' => '<h1>',
-    'after_title' => '</h1>',
-  ) );
-  register_sidebar( array(
-    'name' => 'Bottom Social Icons',
-    'id' => 'empowerment_bottom-social-icons',
+    'name' => 'Navigation Searchbar',
+    'id' => 'oilog_search_bar',
     'before_widget' => '',
     'after_widget' => '',
     'before_title' => '',
     'after_title' => '',
   ) );
-
   register_sidebar( array(
-    'name' => 'Page Sidebar',
-    'id' => 'empowerment_page-sidebar',
+    'name' => 'Slider Bar under Navigation',
+    'id' => 'oilog_slider',
     'before_widget' => '',
     'after_widget' => '',
-    'before_title' => '<h1>',
-    'after_title' => '</h1>',
+    'before_title' => '',
+    'after_title' => '',
   ) );
-
+  register_sidebar( array(
+    'name' => 'Copyright Sidebar',
+    'id' => 'oilog_copyright',
+    'before_widget' => '',
+    'after_widget' => '',
+    'before_title' => '',
+    'after_title' => '',
+  ) );
 }
 
 add_action( 'widgets_init', 'empowerment_widgets_init' );

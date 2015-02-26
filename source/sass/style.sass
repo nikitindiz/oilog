@@ -167,15 +167,24 @@ ul.inline-menu
       &:hover
         text-decoration: underline
 
+.request-list
+  font-size: 0.7em
+  display: inline-block
+  a, a:visited, a:active
+    text-decoration: none
+    &:hover
+      text-decoration: underline
+
 ul#top-menu
   font-size: 0.7em
+  display: inline-block
   li
     padding: 0.5em 1em 0.5em 0
     &:after
       content: '|'
       display: inline-block
       padding-left: 1em
-    &:last-child
+    /*&:last-child
       &:after
         content: ''
     &.icon-login
@@ -318,6 +327,25 @@ ul#top-menu
           border-right: 1px solid $color-gray-02
   .search-wrapper
     vertical-align: middle
+    form.searchform
+      & > div
+        padding-top: 10px
+        label.screen-reader-text
+          display: none
+        input
+          height: 21px
+        input[type="text"]
+          width: 100px
+          margin-left: 10px
+        input[type="submit"]
+          border: 1px solid $color-gray
+          background-color: $color-gray-02
+          opacity: 0.5
+          +transition3(opacity, 0.2s, background-color, 0.2s, color, 0.2s)
+          &:hover
+            background-color: $color-orange
+            opacity: 1
+            color: white
 
 .content-header
   margin-top: 1em
@@ -906,3 +934,18 @@ ul#top-menu
     width: 300px
     padding: 1em
     border: 1px solid rgba(0,0,0,0.1)
+
+/*.css3spinner
+  +border-radius(50%)
+  background-color: red
+  width: 100px
+  height: 100px
+  position: absolute
+  left: 50%
+  top: 50%
+  transform: translate(-50%,-50%)
+  &:after
+    position: absolute
+    width: 100%
+    height: 100%
+    border:
