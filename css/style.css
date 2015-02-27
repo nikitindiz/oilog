@@ -100,6 +100,10 @@ body {
     width: 100%;
     clear: both; }
 
+.inner-spacer {
+  padding-top: 1em;
+  padding-bottom: 2em; }
+
 .responsive-top-menu-button {
   display: none;
   font-size: 2em;
@@ -973,7 +977,7 @@ ul#top-menu {
     max-width: 500px;
     margin: 0 auto;
     padding: 1em; }
-    .popup-price-window .product-list .contact-info input[type="text"] {
+    .popup-price-window .product-list .contact-info input[type="text"], .popup-price-window .product-list .contact-info input[type="email"] {
       border: 0;
       padding: 0.6em;
       width: 100%; }
@@ -1170,7 +1174,8 @@ ul#top-menu {
     float: left;
     width: 300px;
     padding: 1em;
-    border: 1px solid rgba(0, 0, 0, 0.1); }
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: center; }
     @media screen and (max-width: 861px) {
       .single-product .thumb {
         float: none;
@@ -1221,6 +1226,9 @@ a {
     opacity: 0.7; }
   a:hover {
     color: orange; }
+
+#wpgmza_map {
+  float: none !important; }
 
 /*.css3spinner
  * +border-radius(50%)

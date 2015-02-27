@@ -171,6 +171,10 @@ body
   position: relative
   +clearfix
 
+.inner-spacer
+  padding-top: 1em
+  padding-bottom: 2em
+
 .responsive-top-menu-button
   display: none
   font-size: 2em
@@ -933,7 +937,7 @@ ul#top-menu
     margin: 0 auto
     padding: 1em
     .contact-info
-      input[type="text"]
+      input[type="text"], input[type="email"]
         border: 0
         padding: 0.6em
         width: 100%
@@ -1099,6 +1103,7 @@ ul#top-menu
     width: 300px
     padding: 1em
     border: 1px solid rgba(0,0,0,0.1)
+    text-align: center
     @media screen and (max-width: $breakpint03)
       float: none
       width: 100%
@@ -1137,6 +1142,9 @@ a
     opacity: 0.7
   &:hover
     color: orange
+
+#wpgmza_map
+  float: none !important
 
 /*.css3spinner
   +border-radius(50%)

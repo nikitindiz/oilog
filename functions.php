@@ -224,3 +224,19 @@ function oilog_acordeon_item($atts, $content = null)
 }
 
 add_shortcode('oilog_acordeon_item', 'oilog_acordeon_item');
+
+function content_wrap($atts, $content = null)
+{
+
+    $params = shortcode_atts( array(
+        'class' => ''
+    ), $atts );
+
+  return '
+          <div class="content-wrapper '.$params['class'].'">
+              '.do_shortcode($content).'
+          </div>
+        ';
+}
+
+add_shortcode('content_wrap', 'content_wrap');

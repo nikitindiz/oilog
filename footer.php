@@ -48,7 +48,7 @@
             <input type="text" placeholder="Your Name">
           </label>
           <label for="email">
-            <input type="text" placeholder="Your Email">
+            <input type="email" placeholder="Your Email">
           </label>
           <label for="phone">
             <input type="text" placeholder="Phone">

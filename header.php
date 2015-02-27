@@ -11,7 +11,7 @@
   <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.png">
   <?php wp_head(); ?>
   <!--title><?php bloginfo('name'); ?> | <?php is_front_page() ? bloginfo('description') : wp_title(''); ?></title-->
-  <title><?php bloginfo('name'); ?></title>
+  <title><?php is_front_page() ? bloginfo('description') : wp_title(''); ?> - <?php bloginfo('name'); ?></title>
 </head>
 <body ng-controller="priceReqController as priceReqCtrl" <?php body_class(); ?> role="document">
 
